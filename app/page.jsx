@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const getData = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const json = await res.json()
@@ -12,10 +14,10 @@ const Home = async () => {
     <>
       <main>
         {data.map((post) => (
-          <div>
+          <Link href={`./post/${post.id}`} className='card'>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
-          </div>
+          </Link>
         ))}
       </main>
     </>

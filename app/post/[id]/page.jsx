@@ -1,3 +1,5 @@
+import Card from "@/app/components/Card/Card"
+
 const getData = async (params) => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
   const post = await res.json()
@@ -11,9 +13,7 @@ const Post = async ({params}) => {
 
     return (
       <>
-        <h2>{`Post #${params.id}`}</h2>
-        <h3>{post.title}</h3>
-        <p>{post.body}</p>
+        <Card title={post.title} body={post.body}/>
       </>
     )
   }

@@ -16,8 +16,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <header>
           <nav>
-            <ul>
-              <li><Link href='/'>Home</Link></li>
+            <ul className='navbar__list'>
+              <li className='navbar__list-item'><Link className='navbar__list-item-link' href='/'>Home</Link></li>
             </ul>
           </nav>
         </header>

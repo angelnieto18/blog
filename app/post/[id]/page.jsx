@@ -1,4 +1,4 @@
-import Card from "@/app/components/Card/Card"
+import styles from './styles.module.css'
 
 const getData = async (params) => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
@@ -13,7 +13,10 @@ const Post = async ({params}) => {
 
     return (
       <>
-        <Card title={post.title} body={post.body}/>
+        <div className={styles.post}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+        </div>
       </>
     )
   }
